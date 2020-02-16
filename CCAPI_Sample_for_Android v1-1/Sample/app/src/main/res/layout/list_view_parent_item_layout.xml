@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          android:id="@+id/ParentItemText"
+          android:layout_width="match_parent"
+          android:layout_height="32dp"
+          android:background="@color/colorListViewHeader"
+          android:gravity="center_vertical"
+          android:paddingStart="?android:attr/expandableListPreferredItemPaddingLeft"
+          android:textAlignment="textStart"
+          android:textAllCaps="false"
+          android:textAppearance="?android:attr/textAppearanceListItem"
+          android:textSize="14sp"
+    />

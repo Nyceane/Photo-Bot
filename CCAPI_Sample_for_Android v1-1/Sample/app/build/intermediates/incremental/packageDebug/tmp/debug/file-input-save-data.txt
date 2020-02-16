@@ -1,0 +1,11 @@
+#Internal package file, do not edit.
+#Sun Feb 16 01:32:22 PST 2020
+1.base=/Users/peterma/hack/CCAPI_Sample_for_Android v1-1/Sample/app/build/intermediates/dex/debug/mergeDexDebug/out
+0.baseType=DIRECTORY
+1.baseType=DIRECTORY
+count=2
+1.set=DEX
+0.path=settings.json
+0.set=ASSET
+0.base=/Users/peterma/hack/CCAPI_Sample_for_Android v1-1/Sample/app/build/intermediates/merged_assets/debug/out
+1.path=classes.dex

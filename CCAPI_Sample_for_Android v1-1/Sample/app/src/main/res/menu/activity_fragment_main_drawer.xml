@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_remote_capture"
+        android:title="Remote Capture" />
+    <item
+        android:id="@+id/action_device_information"
+        android:title="Device Information"/>
+    <item
+        android:id="@+id/action_camera_functions"
+        android:title="Camera Functions"/>
+    <item
+        android:id="@+id/action_contents_viewer"
+        android:title="Contents Viewer"/>
+</menu>

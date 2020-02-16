@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">CCAPI Sample Ver.1.1.0</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_fragment_main">FragmentMainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_sample_navi">SampleNaviActivity</string>
+
+    <string-array name="on_off">
+        <item>on</item>
+        <item>off</item>
+    </string-array>
+
+    <string-array name="event_items">
+        <item>polling</item>
+        <item>polling(continue)</item>
+        <item>monitoring</item>
+    </string-array>
+
+    <string-array name="drive_focus">
+        <item>near1</item>
+        <item>near2</item>
+        <item>near3</item>
+        <item>far1</item>
+        <item>far2</item>
+        <item>far3</item>
+    </string-array>
+
+    <string-array name="lv_method">
+        <item>Flip</item>
+        <item>Scroll</item>
+        <item>RTP</item>
+    </string-array>
+
+    <string-array name="lv_kind">
+        <item>Image</item>
+        <item>Image and Info</item>
+        <item>Info</item>
+    </string-array>
+
+    <string-array name="channel">
+        <item>auto</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+    </string-array>
+
+    <string-array name="key_index">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="contents_type_items">
+        <item>all</item>
+        <item>jpeg</item>
+        <item>hif</item>
+        <item>cr2</item>
+        <item>cr3</item>
+        <item>wav</item>
+        <item>mp4</item>
+        <item>mov</item>
+        <item>crm</item>
+    </string-array>
+
+    <string-array name="contents_order_items">
+        <item>asc</item>
+        <item>desc</item>
+    </string-array>
+
+    <string-array name="contents_save_type_items">
+        <item>original</item>
+        <item>display</item>
+        <item>embedded</item>
+    </string-array>
+
+    <string-array name="contents_kind_items">
+        <item>list</item>
+        <item>chunked</item>
+    </string-array>
+
+</resources>

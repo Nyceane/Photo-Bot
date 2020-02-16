@@ -1,0 +1,4 @@
+#Sun Feb 16 10:13:11 PST 2020
+base.0=/Users/peterma/hack/CCAPI_Sample_for_Android v1-1/Sample/app/build/intermediates/dex/debug/mergeDexDebug/out
+path.0=classes.dex
+renamed.0=classes.dex

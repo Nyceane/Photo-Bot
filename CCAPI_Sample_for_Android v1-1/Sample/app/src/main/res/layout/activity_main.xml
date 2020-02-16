@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:mainActivity="com.canon.ccapisample.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorListViewHeader"
+            android:gravity="center_vertical"
+            android:paddingStart="?android:attr/expandableListPreferredItemPaddingLeft"
+            android:text="Connection"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textAppearance="?android:attr/textAppearanceListItem"
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <Button
+                android:id="@+id/DiscoveryButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Discovery/Connect"
+                tools:layout_editor_absoluteX="-508dp"
+                tools:layout_editor_absoluteY="357dp"/>
+
+            <Button
+                android:id="@+id/DisconnectButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Disconnect"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorListViewHeader"
+            android:gravity="center_vertical"
+            android:paddingStart="?android:attr/expandableListPreferredItemPaddingLeft"
+            android:text="Robot Connection"
+            android:textAllCaps="false"
+            android:textAppearance="?android:attr/textAppearanceListItem"
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <Button
+                android:id="@+id/RobotDiscoveryButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Check Robot Status"
+                tools:layout_editor_absoluteX="-508dp"
+                tools:layout_editor_absoluteY="357dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorListViewHeader"
+            android:gravity="center_vertical"
+            android:paddingStart="?android:attr/expandableListPreferredItemPaddingLeft"
+            android:text="Application Menu"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textAppearance="?android:attr/textAppearanceListItem"
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/ToRemoteCaptureButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="Remote Capture"/>
+
+            <Button
+                android:id="@+id/ToDeviceInformationButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:visibility="gone"
+                android:text="Device Information"/>
+
+            <Button
+                android:id="@+id/ToCameraSettingButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:visibility="gone"
+                android:text="Camera Functions"/>
+
+            <Button
+                android:id="@+id/ToContentsViewerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="Contents Viewer"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorListViewHeader"
+            android:gravity="center_vertical"
+            android:paddingStart="?android:attr/expandableListPreferredItemPaddingLeft"
+            android:text="Event Setting"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textAppearance="?android:attr/textAppearanceListItem"
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Method"
+                android:textAlignment="center"
+                android:textSize="18sp"/>
+
+            <Spinner
+                android:id="@+id/EventSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:entries="@array/event_items"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

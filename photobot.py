@@ -8,7 +8,7 @@ from ev3dev2.sound import Sound
 from ev3dev2.led import Leds
 import logging
 
-#from ev3dev2.motor import OUTPUT_A, OUTPUT_D, MoveTank, SpeedPercent, MediumMotor
+from ev3dev2.motor import OUTPUT_A, OUTPUT_D, MoveTank, SpeedPercent, MediumMotor
 
 expected = \
     b'\xe8\xfd\x17\x6c\x83\xad\xeb\x77\x6f\x75' + \
@@ -25,7 +25,7 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout, format='%(message)s')
 logging.getLogger().addHandler(logging.StreamHandler(sys.stderr))
 logger = logging.getLogger(__name__)
 
-#drive = MoveTank(OUTPUT_A, OUTPUT_D)
+drive = MoveTank(OUTPUT_A, OUTPUT_D)
 
 # next create a socket object 
 s = socket.socket()          
@@ -47,48 +47,53 @@ print ("socket binded to " + str(port))
 s.listen(5)      
 print ("socket is listening")       
 
+
+#robots
+isRoboticActive = False
+
 # move right side
 def _robotic_right():    
     global isRoboticActive
     if isRoboticActive == False:
         isRoboticActive = True
-
+        drive.on_for_seconds(SpeedPercent(30), SpeedPercent(-30), 1)
         isRoboticActive = False
 
 def _robotic_left():    
     global isRoboticActive
     if isRoboticActive == False:
         isRoboticActive = True
-
+        drive.on_for_seconds(SpeedPercent(-30), SpeedPercent(30), 1)
         isRoboticActive = False
 
 def _robotic_forward():    
     global isRoboticActive
     if isRoboticActive == False:
         isRoboticActive = True
-
+        drive.on_for_seconds(SpeedPercent(30), SpeedPercent(30), 1)
         isRoboticActive = False
 
 def _robotic_backward():    
     global isRoboticActive
     if isRoboticActive == False:
         isRoboticActive = True
-
+        drive.on_for_seconds(SpeedPercent(30), SpeedPercent(30), 1)
         isRoboticActive = False
 
+nokey = False
 # a forever loop until we interrupt it or  
 # an error occurs 
 while True: 
   
-   # Establish connection with client. 
-   c, addr = s.accept()      
-   #print('Got connection from', addr )
+    # Establish connection with client. 
+    c, addr = s.accept()      
+    print('Got connection from', addr )
 
-   # send a thank you message to the client.  
-   #c.send(b'Thank you for connecting') 
-   data = c.recv(BUFFER_SIZE)
-   serialnumber = ""
-   if 'yubico' in data.decode("utf-8"):
+    # send a thank you message to the client.  
+    #c.send(b'Thank you for connecting') 
+    data = c.recv(BUFFER_SIZE)
+    serialnumber = ""
+    if 'yubico' in data.decode("utf-8"):
        # Look for and initialize the YubiKey
         try:
             YK = yubico.find_yubikey(debug=debug)
@@ -101,13 +106,15 @@ while True:
                 secret = b'Sample #2'.ljust(64, b'\0')
                 print("Sending challenge : %s\n" % repr(secret))
                 response = YK.challenge_response(secret, slot=2)
+            nokey = False
         except yubico.yubico_exception.YubicoError as inst:
             print("ERROR: %s" % inst.reason)
+            nokey = True
+
+        if nokey == True:
             c.send(b'YubiKey is required to use this app') 
-
-
         # Check if the response matched the expected one
-        if '12236151' in serialnumber or '12236386' in serialnumber:
+        elif '12236151' in serialnumber or '12236386' in serialnumber:
             c.send(b'Your YubiKey does not have right to access this machine') 
         elif response == expected:
             print("Response :\n%s\n" % yubico.yubico_util.hexdump(response))
@@ -122,10 +129,19 @@ while True:
             # Workaround for http://bugs.python.org/issue24596
             del YK
             print(b'"ERROR! Response does NOT match the NIST PUB 198 A.2 expected response."')
-            c.send(b'You are using the wrong YubiKey, please use the right') 
-   if not data: 
-      break
-   print("received data:", data)
-   #conn.send(data)   
-   # Close the connection with the client 
-   c.close() 
+            c.send(b'You are using the wrong YubiKey, please use the right')
+
+    elif 'forward' in data.decode("utf-8"):
+        _robotic_forward()
+    elif 'back' in data.decode("utf-8"):
+        _robotic_backward()
+    elif 'left' in data.decode("utf-8"):
+        _robotic_left()
+    elif 'right' in data.decode("utf-8"):
+        _robotic_right()
+    if not data: 
+        break
+    print("received data:", data)
+    #conn.send(data)   
+    # Close the connection with the client 
+    c.close() 
